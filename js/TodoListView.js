@@ -155,6 +155,8 @@ class TodoListView {
     loadListData(listToLoad) {
         let listNameTextField = document.getElementById(TodoGUIId.LIST_NAME_TEXTFIELD);
         listNameTextField.value = listToLoad.getName();
+        let listOwnerTextField = document.getElementById(TodoGUIId.LIST_OWNER_TEXTFIELD);
+        listOwnerTextField.value = listToLoad.getOwner();
         this.loadItems(listToLoad);
     }
 
