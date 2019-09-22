@@ -62,6 +62,11 @@ const TodoGUIId = {
     LIST_OWNER_PROMPT: "list_owner_prompt",
     LIST_OWNER_TEXTFIELD: 'list_owner_textfield',
     LIST_ITEMS_CONTAINER: 'list_items_container',
+    
+    MOVE_UP: 'move_up',
+    MOVE_DOWN: 'move_down',
+    CLOSE: 'close',
+    MODAL_YES_NO_DIALOG: 'modal_yes_no_dialog',
 };
 
 /**
@@ -83,6 +88,13 @@ const TodoGUIClass = {
     LIST_ITEM_CARD_ASSIGNED_TO: "list_item_card_assigned_to",
     LIST_ITEM_CARD_COMPLETED: "list_item_card_completed",
     LIST_ITEM_CARD_NOT_COMPLETED: "list_item_card_not_completed",
+
+    LIST_ITEM_MOVE_UP: "list_item_move_up",
+    LIST_ITEM_MOVE_DOWN: "list_item_move_down",
+    LIST_ITEM_CLOSE: "list_item_close",
+
+    
+    IS_VISIBLE: "is_visible",
 };
 
 /**

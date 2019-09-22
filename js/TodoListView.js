@@ -77,6 +77,22 @@ class TodoListView {
         newItemDiv.appendChild(assignedToDiv);
         newItemDiv.appendChild(completedDiv);
 
+        let moveUp = document.createElement(TodoHTML.DIV);
+        moveUp.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_MOVE_UP);
+        moveUp.innerHTML = "<img id=\"move_up\" src=\"/images/icons/MoveUp.png\" alt=\"move up icon\" align=\"right\" style=\"padding-right: 2px\"></img>";
+
+        let moveDown = document.createElement(TodoHTML.DIV);
+        moveDown.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_MOVE_DOWN);
+        moveDown.innerHTML = "<img id=\"move_down\" src=\"/images/icons/MoveDown.png\" alt=\"move down icon\" align=\"right\" style=\"padding-right: 2px\"></img>";
+ 
+        let close = document.createElement(TodoHTML.DIV);
+        close.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_CLOSE);
+        close.innerHTML = "<img id=\"close\" src=\"/images/icons/Close.png\" alt=\"close icon\" align=\"right\" style=\"width: 48px;height:48px;\"></img>";
+
+        newItemDiv.appendChild(close);
+        newItemDiv.appendChild(moveDown);
+        newItemDiv.appendChild(moveUp);
+
         return newItemDiv;
     }
 

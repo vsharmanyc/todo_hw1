@@ -23,6 +23,7 @@ class TodoListController {
         // THEN THE CONTROLS ON THE LIST SCREEN
         this.registerEventHandler(TodoGUIId.LIST_HEADING, TodoHTML.CLICK, this[TodoCallback.PROCESS_GO_HOME]);
         this.registerEventHandler(TodoGUIId.LIST_NAME_TEXTFIELD, TodoHTML.KEYUP, this[TodoCallback.PROCESS_CHANGE_NAME]);
+        this.registerEventHandler(TodoGUIId.LIST_TRASH, TodoHTML.CLICK, this[TodoCallback.PROCESS_DELETE_LIST]);
     }
 
     /**
@@ -40,6 +41,12 @@ class TodoListController {
 
         // AND SETUP THE CALLBACK FOR THE SPECIFIED EVENT TYPE
         control.addEventListener(eventName, callback);
+    }
+
+    processDeleteList(){
+        console.log("CHUTIYA");
+        window.todo.model.goHome();
+
     }
 
     /**
@@ -85,6 +92,7 @@ class TodoListController {
      * todo logo to go back to the home screen.
      */
     processGoHome() {
+        console.log("CHUTIYA111111")
         window.todo.model.goHome();
     }
 

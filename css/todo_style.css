@@ -125,3 +125,20 @@ body {
 .list_item_card_not_completed {
     color: red;
 }
+
+#move_up {
+    background-clip: content-box;
+    background-color: var(--swatch-accent);
+    border-radius: 10px;
+}
+
+#move_down {
+    background-clip: content-box;
+    background-color: var(--swatch-accent);
+    border-radius: 10px;
+}
+
+#close {
+    background-color: var(--swatch-accent);
+    border-radius: 10px;
+}
