@@ -93,6 +93,10 @@ class TodoListView {
         newItemDiv.appendChild(moveDown);
         newItemDiv.appendChild(moveUp);
 
+        this.setupCallback(close, TodoHTML.ONCLICK, TodoCallback.PROCESS_DELETE_ITEM, itemArgs);
+        this.setupCallback(moveDown, TodoHTML.ONCLICK, TodoCallback.PROCESS_MOVE_ITEM_DOWN, itemArgs);
+        this.setupCallback(moveUp, TodoHTML.ONCLICK, TodoCallback.PROCESS_MOVE_ITEM_UP, itemArgs);
+
         return newItemDiv;
     }
 

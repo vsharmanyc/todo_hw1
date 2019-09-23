@@ -23,6 +23,7 @@ class TodoListController {
         // THEN THE CONTROLS ON THE LIST SCREEN
         this.registerEventHandler(TodoGUIId.LIST_HEADING, TodoHTML.CLICK, this[TodoCallback.PROCESS_GO_HOME]);
         this.registerEventHandler(TodoGUIId.LIST_NAME_TEXTFIELD, TodoHTML.KEYUP, this[TodoCallback.PROCESS_CHANGE_NAME]);
+        
         this.registerEventHandler(TodoGUIId.LIST_TRASH, TodoHTML.CLICK, this[TodoCallback.PROCESS_DELETE_LIST]);
     }
 
@@ -44,9 +45,39 @@ class TodoListController {
     }
 
     processDeleteList(){
-        console.log("CHUTIYA");
-        window.todo.model.goHome();
+        let listToEdit = window.todo.model.listToEdit;
+        while(window.todo.model.getNumItems()){
+            let item = listToEdit.getItemAtIndex(0);
+            listToEdit.removeItem(item);
+        }
+        let listView = new TodoListView(window.todo.model);
+        listView.loadListData(listToEdit);
+    }
 
+    processDeleteItem(index){
+        let listToEdit = window.todo.model.listToEdit;
+        let item = listToEdit.getItemAtIndex(index);
+        listToEdit.removeItem(item);
+        let listView = new TodoListView(window.todo.model);
+        listView.loadListData(listToEdit);
+    }
+
+    processMoveItemDown(index){
+        if(index != window.todo.model.getNumItems() - 1){
+            let listToEdit = window.todo.model.listToEdit;
+            listToEdit.swapItems(index, parseInt(index) + 1);
+            let listView = new TodoListView(window.todo.model);
+            listView.loadListData(listToEdit);
+        }
+    }
+
+    processMoveItemUp(index){
+        if(index != 0){
+            let listToEdit = window.todo.model.listToEdit;
+            listToEdit.swapItems(index, parseInt(index) - 1);
+            let listView = new TodoListView(window.todo.model);
+            listView.loadListData(listToEdit);
+        }
     }
 
     /**

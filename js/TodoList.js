@@ -77,4 +77,11 @@ class TodoList {
     getItemAtIndex(index) {
         return this.items[index];
     }
+
+    swapItems(index1, index2){
+        console.log("swapItems");
+        let temp = this.items[index1];
+        this.items[index1] = this.items[index2];
+        this.items[index2] = temp;
+    }
 }
