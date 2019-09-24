@@ -160,4 +160,15 @@ class TodoListController {
             window.todo.model.sortTasks(ItemSortCriteria.SORT_BY_STATUS_INCREASING);
         }
     }
+
+    processSortItemsByDueDate() {
+        // IF WE ARE CURRENTLY INCREASING BY STATUS SWITCH TO DECREASING
+        if (window.todo.model.isCurrentItemSortCriteria(ItemSortCriteria.SORT_BY_STATUS_INCREASING)) {
+            window.todo.model.sortTasks(ItemSortCriteria.SORT_BY_STATUS_DECREASING);
+        }
+        // ALL OTHER CASES SORT BY INCREASING
+        else {
+            window.todo.model.sortTasks(ItemSortCriteria.SORT_BY_STATUS_INCREASING);
+        }
+    }
 }
