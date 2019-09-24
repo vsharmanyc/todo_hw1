@@ -123,8 +123,12 @@ class TodoListController {
      * todo logo to go back to the home screen.
      */
     processGoHome() {
-        console.log("CHUTIYA111111")
         window.todo.model.goHome();
+    }
+
+    processCreateNewItem(){
+        console.log("create new item");
+        window.todo.model.goAddItem();
     }
 
     /**

@@ -41,6 +41,7 @@ const TodoGUIId = {
     // IDs FOR SCREENS
     TODO_HOME: 'todo_home',
     TODO_LIST: 'todo_list',
+    TODO_ADD: 'todo_add',
 
     // IDs FOR HOME SCREEN CONTROLS
     HOME_YOUR_LISTS_CONTAINER: 'home_your_lists_container',
@@ -62,11 +63,15 @@ const TodoGUIId = {
     LIST_OWNER_PROMPT: "list_owner_prompt",
     LIST_OWNER_TEXTFIELD: 'list_owner_textfield',
     LIST_ITEMS_CONTAINER: 'list_items_container',
-    
+
+    // IDS FOR ADD TO LIST SCREEN CONTROLS
+
+
     MOVE_UP: 'move_up',
     MOVE_DOWN: 'move_down',
     CLOSE: 'close',
     MODAL_YES_NO_DIALOG: 'modal_yes_no_dialog',
+    ADD_NEW_ITEM: 'add_new_item',
 };
 
 /**
@@ -88,6 +93,9 @@ const TodoGUIClass = {
     LIST_ITEM_CARD_ASSIGNED_TO: "list_item_card_assigned_to",
     LIST_ITEM_CARD_COMPLETED: "list_item_card_completed",
     LIST_ITEM_CARD_NOT_COMPLETED: "list_item_card_not_completed",
+    LIST_ITEM_CARD_DUE_DATE: "list_item_card_due_date",
+
+    LIST_ITEM_DUE_DATE_HEADER: "list_item_due_date_header",
 
     LIST_ITEM_MOVE_UP: "list_item_move_up",
     LIST_ITEM_MOVE_DOWN: "list_item_move_down",

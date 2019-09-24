@@ -119,6 +119,7 @@ class TodoListModel {
     goHome() {
         // THIS COULD HAPPEN ANYWHERE SO HIDE ALL THE OTHERS
         this.view.showElementWithId(TodoGUIId.TODO_LIST, false);
+        this.view.showElementWithId(TodoGUIId.TODO_ADD, false);
 
         // AND GO HOME
         this.view.showElementWithId(TodoGUIId.TODO_HOME, true);        
@@ -134,6 +135,12 @@ class TodoListModel {
 
         // SHOW THE TOOLBAR AND LIST EDIT
         this.view.showElementWithId(TodoGUIId.TODO_LIST, true);
+    }
+
+    goAddItem(){
+        this.view.showElementWithId(TodoGUIId.TODO_LIST, false);
+
+        this.view.showElementWithId(TodoGUIId.TODO_ADD, true);
     }
 
     /**

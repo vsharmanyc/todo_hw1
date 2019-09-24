@@ -62,6 +62,12 @@ class TodoListView {
         assignedToDiv.innerHTML =
             'Assigned To: ' + this.buildOpenTag(TodoHTML.STRONG) + listItem.getAssignedTo() + this.buildCloseTag(TodoHTML.STRONG);
 
+        let dueDateDiv = document.createElement(TodoHTML.DIV);
+        dueDateDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_CARD_DUE_DATE);
+        dueDateDiv.innerHTML = listItem.getDueDate();
+
+        newItemDiv.appendChild(dueDateDiv);
+
         let completedDiv = document.createElement(TodoHTML.DIV);
         if (listItem.isCompleted()) {
             completedDiv.innerHTML += "Completed";
@@ -121,8 +127,15 @@ class TodoListView {
         statusHeaderDiv.innerHTML = 'Status';
         this.setupCallback(statusHeaderDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_SORT_ITEMS_BY_STATUS, callbackArguments);
 
+        let dueDateHeaderDiv = document.createElement(TodoHTML.DIV);
+        dueDateHeaderDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_DUE_DATE_HEADER);
+        dueDateHeaderDiv.innerHTML = 'Due Date';
+        this.setupCallback(dueDateHeaderDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_SORT_ITEMS_BY_DUE_DATE, callbackArguments);
+
+
         // THESE GO IN THE DETAILS DIV
         listItemHeaderDiv.appendChild(taskHeaderDiv);
+        listItemHeaderDiv.appendChild(dueDateHeaderDiv);
         listItemHeaderDiv.appendChild(statusHeaderDiv);
         return listItemHeaderDiv;
     }
@@ -164,6 +177,13 @@ class TodoListView {
             let itemCard = this.buildListItem(item, i);
             listItemsDiv.appendChild(itemCard);
         }
+
+        let addButton = document.createElement(TodoHTML.DIV);
+        addButton.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_ADD_CARD);
+        addButton.innerHTML = "<center><img id=\"add_new_item\" src=\"/images/icons/AddItem.png\" alt=\"add item icon\" style=\"width: 48px;height:48px;\"></img></center>";
+        this.setupCallback(addButton, TodoHTML.ONCLICK, TodoCallback.PROCESS_CREATE_NEW_ITEM, []);
+
+        listItemsDiv.appendChild(addButton);
     }
 
     /**

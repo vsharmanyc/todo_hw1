@@ -62,6 +62,36 @@
         <div id="list_items_container">
         </div>
     </div>
+
+    <div id="todo_add" hidden> 
+        
+        <div id="add_heading">Item</div>
+
+        <div id="line1" class="text_toolbar">
+            <span id="add_description_prompt">Description:</span>
+            <input type="text" id="item_description_textfield" />
+        </div>
+
+        <div id="line2" class="text_toolbar">
+            <span id="item_assigned_prompt">Assigned To:</span>
+            <input type="text" id="item_assigned_textfield" />
+        </div>
+
+        <div id="line3" class="text_toolbar">
+            <span id="item_date_prompt">Due Date:</span>
+            <input type="date" id="item_date_textfield" />
+        </div>
+
+        <div id="line4" class="text_toolbar">
+                <span id="item_completed">Due Date:</span>
+                <input type="checkbox" id="completed_checkbox" />
+        </div>
+
+        <button id="Submit_button" type="submit">Submit</button> 
+        <button id="Cancel_button" type="button">Cancel</button> 
+
+    </div>
+
 </body>
 
 </html>
